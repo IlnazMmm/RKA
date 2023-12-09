@@ -19,11 +19,11 @@ features_income_tips = df[['USD', 'Tips']]
 features_all = df.drop(['Region'], axis=1)
 
 # Выполняем кластеризацию для среднего дохода и размера чаевых
-kmeans_income_tips = KMeans(n_clusters=3, random_state=42)
+kmeans_income_tips = KMeans(n_clusters=2, random_state=42)
 df['Cluster_Income_Tips'] = kmeans_income_tips.fit_predict(features_income_tips)
 
 # Выполняем кластеризацию для всех параметров
-kmeans_all = KMeans(n_clusters=3, random_state=42)
+kmeans_all = KMeans(n_clusters=2, random_state=42)
 df['Cluster_All'] = kmeans_all.fit_predict(features_all)
 
 # Визуализация результатов по среднему доходу и размеру чаевых
